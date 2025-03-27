@@ -6,24 +6,20 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio Dashboard",
-  description: "A modern portfolio dashboard built with Next.js",
+  title: "Portfolio",
+  description: "A modern portfolio built with Next.js",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider
-          defaultTheme="system"
-        >
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
-}
+} 

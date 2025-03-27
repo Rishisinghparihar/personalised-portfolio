@@ -66,31 +66,4 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 16rem;
-  transition: all 0.3s ease-in-out;
-  z-index: 50;
-}
-
-.main-content {
-  margin-left: 16rem;
-  transition: all 0.3s ease-in-out;
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    left: -16rem;
-  }
-  .sidebar.open {
-    left: 0;
-  }
-  .main-content {
-    margin-left: 0;
-  }
-}
+} 

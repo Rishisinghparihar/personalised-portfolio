@@ -15,11 +15,11 @@ const config: Config = {
         foreground: "var(--foreground)",
         card: "var(--card)",
         "card-foreground": "var(--card-foreground)",
-        primary: "#3b82f6", // Fixed primary color for Tailwind gradients
+        primary: "var(--primary)",
         "primary-foreground": "var(--primary-foreground)",
         secondary: "var(--secondary)",
         "secondary-foreground": "var(--secondary-foreground)",
-        accent: "#6366f1", // Fixed accent color for gradients
+        accent: "var(--accent)",
         "accent-foreground": "var(--accent-foreground)",
         muted: "var(--muted)",
         "muted-foreground": "var(--muted-foreground)",
