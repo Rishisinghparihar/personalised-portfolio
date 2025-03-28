@@ -34,7 +34,7 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="text-xl sm:text-2xl font-bold gradient-text">
-            Rishi Parihar
+            Rishi Singh Parihar
           </Link>
 
           {/* Desktop Navigation */}

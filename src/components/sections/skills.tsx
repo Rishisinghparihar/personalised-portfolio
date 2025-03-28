@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import {
   Code2,
   Layout,
@@ -79,84 +80,110 @@ const skills = [
 ];
 
 export function Skills() {
+  const { theme } = useTheme();
   const [activeCategory, setActiveCategory] = useState("frontend");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   const filteredSkills = skills.filter(
     (skill) => skill.category === activeCategory
   );
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className={`p-8 rounded-3xl ${
+            theme === 'dark'
+              ? 'bg-background/80 backdrop-blur-sm border border-border/50'
+              : 'bg-white/80 backdrop-blur-sm border border-border/20'
+          } shadow-lg`}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Skills & Expertise</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My technical skills and expertise in various technologies.
-          </p>
-        </motion.div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-primary/80 to-primary">
+              Skills & Expertise
+            </h2>
+            <p className={`text-lg ${
+              theme === 'dark'
+                ? 'text-muted-foreground/90'
+                : 'text-muted-foreground/80'
+            }`}>
+              Technologies I work with
+            </p>
+          </div>
 
-        {/* Category Filters */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12"
-        >
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeCategory === category.id
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-muted text-muted-foreground hover:bg-muted/80"
-              }`}
-              aria-label={`Filter skills by ${category.name}`}
-            >
-              {category.name}
-            </button>
-          ))}
-        </motion.div>
+          {/* Category Filters */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12"
+          >
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  activeCategory === category.id
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80"
+                }`}
+                aria-label={`Filter skills by ${category.name}`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </motion.div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {filteredSkills.map((skill, index) => (
-            <motion.div
-              key={skill.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative bg-card rounded-lg p-4 sm:p-6 border hover:border-primary/50 transition-colors"
-            >
-              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <skill.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+          {/* Skills Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+            {filteredSkills.map((skill, index) => (
+              <motion.div
+                key={skill.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={`p-6 rounded-3xl ${
+                  theme === 'dark'
+                    ? 'bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50'
+                    : 'bg-white/50 backdrop-blur-sm border border-border/20 hover:border-primary/30'
+                } shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}
+              >
+                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="p-2 bg-primary/10 rounded-lg">
+                    <skill.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-semibold">{skill.name}</h3>
                 </div>
-                <h3 className="text-base sm:text-lg font-semibold">{skill.name}</h3>
-              </div>
-              <div className="relative h-2 bg-muted rounded-full overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
-                  className="absolute inset-y-0 left-0 bg-primary"
-                />
-                <span className="absolute right-2 top-1 text-xs text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                <div className="relative h-2 bg-muted rounded-full overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
+                    className="absolute inset-y-0 left-0 bg-primary"
+                  />
+                  <span className="absolute right-2 top-1 text-xs text-muted-foreground">
+                    {skill.level}%
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

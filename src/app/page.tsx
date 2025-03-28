@@ -4,18 +4,23 @@ import { Hero } from "@/components/sections/hero";
 import { Projects } from "@/components/sections/projects";
 import { Skills } from "@/components/sections/skills";
 import { Contact } from "@/components/sections/contact";
+import { Background } from "@/components/ui/background";
+import { DownloadResume } from "@/components/ui/download-resume";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="relative min-h-screen">
+        <Background />
         <Hero />
         <Projects />
         <Skills />
         <Contact />
+        <Footer />
       </main>
-      <Footer />
+      
+      <DownloadResume />
     </>
   );
 } 

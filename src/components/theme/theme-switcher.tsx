@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "./theme-provider";
+import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
