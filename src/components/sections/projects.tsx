@@ -149,10 +149,10 @@ export function Projects() {
                       {repo.repositoryTopics.nodes.map((topic) => (
                         <span
                           key={topic.topic.name}
-                          className={`text-xs px-2 py-1 rounded-full ${
+                          className={`text-xs px-3 py-1.5 rounded-full transition-all duration-200 hover:scale-105 cursor-pointer ${
                             theme === 'dark'
-                              ? 'bg-primary/10 text-primary/90'
-                              : 'bg-primary/5 text-primary/80'
+                              ? 'bg-primary/20 text-primary hover:bg-primary/30'
+                              : 'bg-primary/15 text-primary hover:bg-primary/25'
                           }`}
                         >
                           {topic.topic.name}
