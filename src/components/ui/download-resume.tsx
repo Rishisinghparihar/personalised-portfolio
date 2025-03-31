@@ -9,7 +9,7 @@ export function DownloadResume() {
 
   return (
     <motion.a
-      href="/resume.pdf"
+      href="/Rishi-Parihar-Resume.pdf"
       download
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
