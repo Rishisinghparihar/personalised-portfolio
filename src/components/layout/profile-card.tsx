@@ -150,3 +150,4 @@ export function ProfileCard({ isOpen, onClose }: ProfileCardProps) {
     </AnimatePresence>
   );
 } 
+
