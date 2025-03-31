@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import { close } from "fs";
 import { Github, Linkedin, Briefcase, Mail, X } from "lucide-react";
 import { useEffect, useRef } from "react";
 
@@ -101,7 +102,7 @@ export function ProfileCard({ isOpen, onClose }: ProfileCardProps) {
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  href="https://github.com"
+                  href="https://github.com/Rishisinghparihar"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-full bg-muted hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
@@ -112,7 +113,7 @@ export function ProfileCard({ isOpen, onClose }: ProfileCardProps) {
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/rishi-singh-parihar-17401a253/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-full bg-muted hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
@@ -123,7 +124,7 @@ export function ProfileCard({ isOpen, onClose }: ProfileCardProps) {
                 <motion.a
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  href="https://upwork.com"
+                  href="https://www.upwork.com/freelancers/~017a52ae3e87032ba9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-full bg-muted hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"

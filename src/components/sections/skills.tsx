@@ -26,7 +26,7 @@ const skills = [
     name: "React",
     category: "frontend",
     icon: Layout,
-    level: 90,
+    level: 100,
   },
   {
     id: 2,
@@ -44,38 +44,38 @@ const skills = [
   },
   {
     id: 4,
+    name: "React Native (Expo CLI)",
+    category: "frontend",
+    icon: Code2,
+    level: 80,
+  },
+  {
+    id: 5,
     name: "Node.js",
     category: "backend",
     icon: Cpu,
     level: 75,
   },
   {
-    id: 5,
+    id: 6,
     name: "MongoDB",
     category: "backend",
     icon: Database,
     level: 70,
   },
   {
-    id: 6,
+    id: 7,
+    name: "Express.js",
+    category: "backend",
+    icon: Database,
+    level: 50,
+  },
+  {
+    id: 8,
     name: "Git",
     category: "tools",
     icon: GitBranch,
     level: 85,
-  },
-  {
-    id: 7,
-    name: "Docker",
-    category: "tools",
-    icon: Boxes,
-    level: 65,
-  },
-  {
-    id: 8,
-    name: "Figma",
-    category: "tools",
-    icon: Palette,
-    level: 75,
   },
 ];
 
@@ -176,9 +176,6 @@ export function Skills() {
                     transition={{ duration: 1, delay: 0.5 + index * 0.1 }}
                     className="absolute inset-y-0 left-0 bg-primary"
                   />
-                  <span className="absolute right-2 top-1 text-xs text-muted-foreground">
-                    {skill.level}%
-                  </span>
                 </div>
               </motion.div>
             ))}

@@ -19,17 +19,17 @@ export function Footer() {
   const socialLinks = [
     {
       name: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/Rishisinghparihar",
       icon: Github,
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/rishi-singh-parihar-17401a253/",
       icon: Linkedin,
     },
     {
       name: "Instagram",
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/rishi.singh.parihar/",
       icon: Instagram,
     },
   ];

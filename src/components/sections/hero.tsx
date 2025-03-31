@@ -96,7 +96,7 @@ export function Hero() {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                href="https://github.com"
+                href="https://github.com/Rishisinghparihar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-2 rounded-xl ${
@@ -111,7 +111,7 @@ export function Hero() {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/rishi-singh-parihar-17401a253/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-2 rounded-xl ${
@@ -126,7 +126,7 @@ export function Hero() {
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                href="https://instagram.com"
+                href="https://www.instagram.com/rishi.singh.parihar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-2 rounded-xl ${
@@ -179,7 +179,7 @@ export function Hero() {
                       : 'border-primary/10'
                   }`}>
                     <Image
-                      src="/profile.png"
+                      src="/r.png"
                       alt="Rishi Parihar"
                       fill
                       className="object-cover object-center"

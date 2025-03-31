@@ -176,7 +176,7 @@ export function Contact() {
                   className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm sm:text-base"
                 >
                   <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
-                  your.email@example.com
+                  rsparihar876@gmail.com
                 </a>
               </div>
 
@@ -186,7 +186,7 @@ export function Contact() {
                   <motion.a
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    href="https://github.com"
+                    href="https://github.com/Rishisinghparihar"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-full bg-muted hover:bg-primary/10 transition-colors"
@@ -197,7 +197,7 @@ export function Contact() {
                   <motion.a
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/rishi-singh-parihar-17401a253/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-full bg-muted hover:bg-primary/10 transition-colors"
@@ -208,7 +208,7 @@ export function Contact() {
                   <motion.a
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/rishi.singh.parihar/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-full bg-muted hover:bg-primary/10 transition-colors"
