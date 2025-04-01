@@ -22,10 +22,26 @@ export function Contact() {
     return null;
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit =async (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log(formData);
+    // console.log(formData);
+    const res = await fetch ("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+    const data = await res.json();
+    if (res.ok) {
+      alert("Message sent successfully!");
+      setFormData({ name: "", email: "", message: "" });
+    }
+    else { {
+      alert("Failed to send message. Please try again.");
+    }
+    }
   };
 
   const handleChange = (
